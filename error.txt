@@ -1,0 +1,2 @@
+AttributeError: 'TestCase' object has no attribute 'assertRaisesRegexp'
+solution: install ensure==1.0.4
