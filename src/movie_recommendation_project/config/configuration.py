@@ -1,6 +1,6 @@
 from src.movie_recommendation_project.constants import *
 from src.movie_recommendation_project.utils.common import read_yaml,create_directories
-from src.movie_recommendation_project.entity import DataIngestionConfig
+from src.movie_recommendation_project.entity import DataIngestionConfig , DataValidationConfig ,DataTransformationConfig, ModelBuildingConfig
 
 class ConfigurationManager:
     def __init__(
@@ -23,4 +23,38 @@ class ConfigurationManager:
 
         )
         return data_ingestion_config
+    
+    def get_data_validation_config(self)->DataValidationConfig:
+        config=self.config.data_validation
+        create_directories([config.root_dir])
+        data_validation_config=DataValidationConfig(
+            root_dir=config.root_dir,
+            status_file=config.status_file,
+            all_required_files=config.all_required_files
+
+        )
+        return data_validation_config
+    
+
+    def get_data_transformation_config(self)->DataTransformationConfig:
+        config=self.config.data_transformation
+        create_directories([config.root_dir])
+        data_transformation_config=DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            transformed_data_path=config.transformed_data_path
+
+        )
+        return data_transformation_config
+    
+    def get_model_building_config(self)->ModelBuildingConfig:
+        config=self.config.model_building
+        create_directories([config.root_dir])
+        model_building_config=ModelBuildingConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            model_path=config.model_path
+
+        )
+        return model_building_config
 

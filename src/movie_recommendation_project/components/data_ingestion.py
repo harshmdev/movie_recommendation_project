@@ -1,5 +1,6 @@
 import os
 import urllib.request as request
+from pathlib import Path
 import zipfile
 from src.movie_recommendation_project.logging import logger
 from src.movie_recommendation_project.utils.common import get_size
