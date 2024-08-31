@@ -21,3 +21,4 @@ model_building:
   root_dir: artifacts/model_building
   data_path: artifacts/data_transformation/tf_data.csv
   model_path: artifacts/model_building/recommender_model.pkl
+
