@@ -10,3 +10,4 @@ streamlit==1.38.0
 joblib==1.4.2
 matplotlib==3.9.2
 seaborn==0.13.2
+python-box==6.0.2
